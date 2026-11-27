@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="DealBoard — a Black Friday and Cyber Monday deal finder. 18 real deals, each checked on 27 Nov 2026, with a verdict that says whether the deal is really a deal.">
+<title>DealBoard — Black Friday deal finder</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c81e1e'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='bold' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="main.js"></script>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="kicker">Black Friday <span aria-hidden="true">·</span> Cyber Monday 2026</p>
+    <h1 class="brand"><a href="#/">DealBoard</a></h1>
+    <p class="tagline">Real deals, checked today — with a verdict on whether each one is really a deal.</p>
+  </div>
+</header>
+
+<section class="stats" id="stats" aria-label="Board summary">
+  <div class="stat"><span class="stat-num" id="stat-deals">–</span><span class="stat-label">deals checked</span></div>
+  <div class="stat"><span class="stat-num" id="stat-stores">–</span><span class="stat-label">stores</span></div>
+  <div class="stat"><span class="stat-num" id="stat-best">–</span><span class="stat-label">biggest cut</span></div>
+  <div class="stat"><span class="stat-num" id="stat-saved">–</span><span class="stat-label">total savings</span></div>
+</section>
+
+<section class="controls" id="controls" aria-label="Search and filter deals">
+  <div class="controls-row">
+    <label class="search-label">Search
+      <input id="q" type="search" placeholder="Try “airpods”, “TV”, “LEGO”…" autocomplete="off">
+    </label>
+    <label>Category
+      <select id="cat"></select>
+    </label>
+    <label>Store
+      <select id="store"></select>
+    </label>
+    <label>At least
+      <select id="min">
+        <option value="0">Any discount</option>
+        <option value="20">20% off</option>
+        <option value="40">40% off</option>
+        <option value="50">50% off</option>
+      </select>
+    </label>
+    <label>Sort by
+      <select id="sort">
+        <option value="discount">Biggest discount</option>
+        <option value="saving">Biggest saving ($)</option>
+        <option value="low">Lowest price</option>
+        <option value="high">Highest price</option>
+      </select>
+    </label>
+    <button id="reset" type="button">Reset</button>
+  </div>
+  <p class="result-count" id="result-count" aria-live="polite"></p>
+</section>
+
+<main id="app"></main>
+
+<footer>
+  <p>Every price on this board was checked on <strong>Fri 27 Nov 2026, 06:30 UTC</strong> against the store's own listing or a publication reporting it. Prices can change or sell out — the check time on each deal is the truth, not the badge.</p>
+  <p>DealBoard is an independent finder built for make.fun's "Build the best real Black Friday deal finder" bounty. Not affiliated with any store or brand shown.</p>
+</footer>
+</body>
+</html>
